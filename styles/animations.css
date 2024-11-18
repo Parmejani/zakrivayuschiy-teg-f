@@ -12,3 +12,38 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+@keyframes arrow {
+  from {
+    margin-inline-start: -19px;
+  }
+  to {
+    margin-inline-start: -15px;
+  }
+}
+
+@keyframes like {
+  from {
+    transform-origin: center;
+    transform: scale(1, 1);
+  }
+  50% {
+    transform-origin: center;
+    transform: scale(1.5, 1.5);
+  }
+  to {
+    transform-origin: center;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes like__sparks {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
