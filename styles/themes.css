@@ -47,6 +47,10 @@
   --accent-color: #00CC14;
 }
 
+.theme-dark .button__text:hover {
+  color: var(--bg-color);
+}
+
 /* Медиазапросы */
 
 @media (prefers-color-scheme: dark) {
@@ -69,5 +73,9 @@
       );
     --bg-color: #000000;
     --accent-color: #00CC14;
+  }
+
+  .theme-auto .button__text:hover {
+    color: var(--bg-color);
   }
 }
