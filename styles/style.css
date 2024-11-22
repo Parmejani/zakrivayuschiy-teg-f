@@ -128,7 +128,7 @@ button {
 }
 
 .main__content_card {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   inline-size: var(--width);
   background-color: var(--bg-color);
@@ -229,7 +229,7 @@ button {
 }
 
 .card__like-button {
-  position: relative; 
+  position: relative;
   font-size: 14px;
   inline-size: 130px;
   block-size: 38px;
@@ -273,7 +273,7 @@ button {
 }
 
 .card__icon-button:active .core,
-.card__icon-button:active .main-body{
+.card__icon-button:active .main-body {
   fill: var(--heart-fill-color);
 }
 
@@ -332,7 +332,7 @@ button {
 }
 
 .header__subtitle {
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);  
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .header__theme-menu {
@@ -448,7 +448,7 @@ dialog:not([open]) {
   display: inline-block;
   vertical-align: 50%;
   width: 39px;
-  height: 39px; 
+  height: 39px;
 }
 
 .modal__text {
