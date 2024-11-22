@@ -31,6 +31,10 @@
 /* Общие сущности */
 
 
+button {
+  outline: none;
+}
+
 .button {
   font-size: 14px;
   border: 2px solid var(--accent-color);
@@ -43,8 +47,8 @@
   display: block;
   position: absolute;
   background-color: var(--accent-color);
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   left: 0;
   top: 0;
   transform: scaleX(0);
@@ -54,24 +58,23 @@
 
 .button:hover::before {
   transform: scaleX(1);
-  transition: transform 0.5s ease-in-out;
 }
 
 .button__text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  transition: color .3s ease;
   z-index: 1;
-  color: var(--accent-color);
-  transition: color 0.5s ease;
 }
 
-.button__text:hover {
-  position: relative;
+.button:hover
+.button__text {
   color: var(--bg-color);
-  transition: color 0.5s ease;
+  transition: color .3s ease .3s;
+}
+
+.button:focus {
+  box-shadow: 2px 2px var(--accent-color);
+  transition: box-shadow .3s ease;
 }
 
 .theme-menu__button {
@@ -92,15 +95,32 @@
   animation: arrow 0.5s ease-in-out infinite alternate;
 }
 
+.theme-menu__button:disabled,
+.theme-menu__button:focus,
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
 .theme-menu__button:disabled {
   cursor: default;
   pointer-events: none;
 }
 
-.theme-menu__button:disabled,
-.theme-menu__button:hover {
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+.theme-menu__button::after {
+  content: '';
+  position: absolute;
+  border-block-end: 2px solid var(--accent-color);
+  inline-size: 80%;
+  left: 0.5ch;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .content_size {
@@ -115,14 +135,62 @@
   border: 2px  solid var(--accent-color);
   padding-inline: 10px;
   line-height: 1.167em;
-  margin-block-end: 50px;
+  margin-block-end: 49px;
 }
 
 .main__content_card-title {
   font-variation-settings: 'wght' var(--font-wght-bold);
   font-size: 18px;
   line-height: 1.21em;
-  margin-block: 5px;
+  margin-block: 4px;
+}
+
+.main__content-picture-container {
+  position: relative;
+  inline-size: calc(100% + 24px);
+  margin-inline-start: -12px;
+  border: 2px solid var(--accent-color);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.main__picture {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+
+.watermark {
+  position: absolute;
+  right: 25px;
+  top:  25px;
+  font-size: 14px;
+  font-family: var(--accent-font);
+  color: var(--accent-color);
+  text-shadow: 
+    1px 1px var(--bg-color),
+    1px -1px var(--bg-color),
+    -1px 1px var(--bg-color),
+    -1px -1px var(--bg-color);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+@supports((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
+  .watermark {
+    -webkit-text-stroke: 1px var(--bg-color);
+    text-stroke: 1px var(--bg-color);
+    text-shadow: none;
+  }
+} 
+
+.main__content_card-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 24px 15px 25px;
 }
 
 .main__content_card-paragraph {
@@ -135,16 +203,33 @@
 }
 
 .card__icon-button {
+  position: relative;
   display: inline-block;
   inline-size: 40px;
   block-size: 40px;
   border: none;
   background-color: var(--bg-color);
   vertical-align: middle;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button::before {
+  content: '';
+  position: absolute;
+  border: 2px solid transparent;
+  left: 6px;
+  top: -1px;
+  block-size: 38px;
+  inline-size: 39px;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus-visible::before {
+  border-color: var(--accent-color);
 }
 
 .card__like-button {
-  position: relative;
+  position: relative; 
   font-size: 14px;
   inline-size: 130px;
   block-size: 38px;
@@ -267,38 +352,32 @@
   line-height: 1.167em;
 }
 
-.main__content_card-picture {
-  position: relative;
-  display: block;
-  inline-size: calc(100% + 24px);
-  margin-inline-start: -12px;
-  border: 1px solid var(--accent-color);
-  aspect-ratio: 1 / 1;
+.grayscale {
+  filter: grayscale(70%) contrast(90%);
 }
 
-.watermark {
-  position: absolute;
-  font-family: var(--accent-font);
-  color: var(--accent-color);
-  text-shadow: 
-    1px 1px var(--bg-color),
-    1px -1px var(--bg-color),
-    -1px 1px var(--bg-color),
-    -1px -1px var(--bg-color);
-  mix-blend-mode: hard-light;
+.saturate {
+  filter: saturate(400%);
 }
 
-.main__picture {
-  display: inline-block;
-  inline-size: 100%;
-  block-size: 100%;
+.hue-rotate {
+  filter: hue-rotate(25deg)
 }
 
-.main__content_card-desc {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  padding: 22px 15px 25px;
+.invert {
+  filter: invert(1) contrast(60%);
+}
+
+.sepia {
+  filter: sepia(90%);
+}
+
+.blur {
+  filter: blur(10px)
+}
+
+.mixed {
+  filter: hue-rotate(80deg) blur(2px) contrast(50%) saturate(140%) ;
 }
 
 .footer {
@@ -318,11 +397,80 @@
 }
 
 .floppy {
+  color: var(--accent-color);
   width: 21px;
   height: 21px;
-  color: var(--bg-color);
-  mix-blend-mode: difference;
+  transition: color .3s ease .2s;
+  z-index: 1;
 }
+
+.footer__button:hover .floppy {
+  color: var(--bg-color);
+  transition: color .3s ease .1s;
+}
+
+
+/* Модалка */
+
+
+#modal {
+  display: flex;
+  position: fixed;
+  place-items: center;
+  padding: 0;
+  min-width: 341px;
+  max-width: 357px;
+  max-height: 195px;
+  border: none;
+  font-family: var(--accent-font);
+  color: var(--accent-color);
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+}
+
+#modal::backdrop {
+  background-color: rgba(0, 0, 0, .75);
+}
+
+dialog:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal__window {
+  display: block;
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+  padding: 30px;
+}
+
+#modal .floppy {
+  display: inline-block;
+  vertical-align: 50%;
+  width: 39px;
+  height: 39px; 
+}
+
+.modal__text {
+  position: relative;
+  display: inline-block;
+  inline-size: 70%;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.5em;
+}
+
+.modal__button {
+  position: relative;
+  block-size: 38px;
+  inline-size: 100%;
+  margin-block-start: 30px;
+}
+
+
+/* Медиазапросы */
+
 
 @media (width <= 375px) {
   :root {
@@ -339,11 +487,3 @@
     height: 28px;
   }
 }
-
-@supports((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
-  .watermark {
-      -webkit-text-stroke: 1px var(--bg-color);
-      text-stroke: 1px var(--bg-color);
-      text-shadow: none;
-  }
-} 
