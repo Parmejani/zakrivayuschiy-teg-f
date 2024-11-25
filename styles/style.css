@@ -32,10 +32,12 @@
 
 
 button {
+  appearance: none;
   outline: none;
 }
 
 .button {
+  display: inline-block;
   font-size: 14px;
   border: 2px solid var(--accent-color);
   font-family: var(--accent-font), monospace;
@@ -89,6 +91,7 @@ button {
   content: '▶';
   position: absolute;
   display: inline-block;
+  inset: 0;
   inline-size: 14px;
   block-size: 14px;
   margin-inline-start: -19px;
@@ -123,19 +126,15 @@ button {
   transform: scaleX(1);
 }
 
-.content_size {
-  inline-size: var(--width);
-}
-
 .main__content_card {
   display: flex;
   flex-direction: column;
   inline-size: var(--width);
+  min-block-size: 224px;
   background-color: var(--bg-color);
   border: 2px  solid var(--accent-color);
   padding-inline: 10px;
   line-height: 1.167em;
-  margin-block-end: 49px;
 }
 
 .main__content_card-title {
@@ -164,8 +163,8 @@ button {
 
 .watermark {
   position: absolute;
-  right: 25px;
-  top:  25px;
+  right: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
+  top: clamp(1.25rem, 1.184rem + 0.2817vw, 1.4375rem);
   font-size: 14px;
   font-family: var(--accent-font);
   color: var(--accent-color);
@@ -174,7 +173,8 @@ button {
     1px -1px var(--bg-color),
     -1px 1px var(--bg-color),
     -1px -1px var(--bg-color);
-  opacity: 0.6;
+  opacity: .5;
+  mix-blend-mode: hard-light;
   z-index: 1;
 }
 
@@ -189,16 +189,16 @@ button {
 .main__content_card-desc {
   display: flex;
   flex-direction: column;
-  gap: 26px;
-  padding: 24px 15px 25px;
+  gap: 25px;
+  padding: 25px 15px 25px;
 }
 
 .main__content_card-paragraph {
   font-variation-settings: 'wght' var(--font-wght-norm);
+  line-height: 1.167em;
 }
 
 .card__button-section {
-  display: block;
   margin-inline-start: auto;
 }
 
@@ -235,6 +235,116 @@ button {
   block-size: 38px;
   padding: 0;
   margin-inline-start: 5px;
+}
+
+
+/* Основные стили */
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 22px;
+  padding-block-end: 25px;
+  block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
+  text-align: center;
+  margin-block: 100px;
+  font-family: var(--accent-font), monospace;
+  background-color: var(--bg-color);
+  border: 2px  solid var(--accent-color);
+  text-transform: uppercase;
+}
+
+.logo {
+  font-variation-settings: 'wght' var(--font-wght-norm), 400;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-decoration: none;
+  outline: none;
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.header__theme-menu {
+  align-self: center;
+  font-size: 14px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  inline-size: 75px;
+  align-items: start;
+}
+
+.content_size {
+  inline-size: var(--width);
+}
+
+.main__content {
+  display: grid;
+  justify-items: center;
+  gap: 50px;
+  line-height: 1.167em;
+}
+
+.grayscale {
+  filter: grayscale(70%) contrast(90%);
+}
+
+.saturate {
+  filter: saturate(400%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(25deg)
+}
+
+.invert {
+  filter: invert(1) contrast(60%);
+}
+
+.sepia {
+  filter: sepia(90%);
+}
+
+.blur {
+  filter: blur(10px);
+}
+
+.mixed {
+  filter: hue-rotate(80deg) blur(2px) contrast(50%) saturate(140%);
+}
+
+.main__content-save-button {
+  display: block;
+  margin-block-end: 103px;
+}
+
+.save__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-inline-size: 308px;
+  padding: 15px 20px;
+}
+
+.floppy {
+  color: var(--accent-color);
+  width: 21px;
+  height: 21px;
+  transition: color .3s ease .2s;
+  z-index: 1;
+}
+
+.save__button:hover .floppy {
+  color: var(--bg-color);
+  transition: color .3s ease .1s;
 }
 
 
@@ -301,119 +411,10 @@ button {
 }
 
 
-/* Основные стили */
-
-
-.header {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  gap: 25px;
-  padding-block-end: 25px;
-  block-size: clamp(323px, 19.4554rem + 3.6607vw, 364px);
-  text-align: center;
-  margin-block: 100px;
-  font-family: var(--accent-font), monospace;
-  background-color: var(--bg-color);
-  border: 2px  solid var(--accent-color);
-  text-transform: uppercase;
-}
-
-.header__subgrid {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  gap: 20px;
-}
-
-.title {
-  font-variation-settings: 'wght' var(--font-wght-norm), 400;
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-}
-
-.header__subtitle {
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-}
-
-.header__theme-menu {
-  align-self: center;
-  font-size: 14px;
-}
-
-.theme-menu__list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  inline-size: 75px;
-  align-items: start;
-}
-
-.main__content {
-  line-height: 1.167em;
-}
-
-.grayscale {
-  filter: grayscale(70%) contrast(90%);
-}
-
-.saturate {
-  filter: saturate(400%);
-}
-
-.hue-rotate {
-  filter: hue-rotate(25deg)
-}
-
-.invert {
-  filter: invert(1) contrast(60%);
-}
-
-.sepia {
-  filter: sepia(90%);
-}
-
-.blur {
-  filter: blur(10px)
-}
-
-.mixed {
-  filter: hue-rotate(80deg) blur(2px) contrast(50%) saturate(140%) ;
-}
-
-.footer {
-  display: block;
-  margin-inline: auto;
-  margin-block-end: 102px;
-}
-
-.footer__button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-inline-size: 308px;
-  padding: 15px 20px;
-}
-
-.floppy {
-  color: var(--accent-color);
-  width: 21px;
-  height: 21px;
-  transition: color .3s ease .2s;
-  z-index: 1;
-}
-
-.footer__button:hover .floppy {
-  color: var(--bg-color);
-  transition: color .3s ease .1s;
-}
-
-
 /* Модалка */
 
 
-#modal {
+.modal__style {
   display: flex;
   position: fixed;
   place-items: center;
@@ -428,7 +429,7 @@ button {
   overflow: hidden;
 }
 
-#modal::backdrop {
+.modal__style::backdrop {
   background-color: rgba(0, 0, 0, .75);
 }
 
@@ -444,7 +445,7 @@ dialog:not([open]) {
   padding: 30px;
 }
 
-#modal .floppy {
+.modal__style .floppy {
   display: inline-block;
   vertical-align: 50%;
   width: 39px;
@@ -473,13 +474,8 @@ dialog:not([open]) {
 
 
 @media (width <= 375px) {
-  :root {
-  --width: 100%;
-  }
-
-  .footer__button {
+  .save__button {
     flex-direction: column;
-    gap: 0;
   }
 
   .floppy {
