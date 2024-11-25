@@ -18,10 +18,8 @@
   </head>
   <body class="page">
     <header class="header content_size">
-      <article class="header__subgrid">
-        <h1 class="title">&lt;/html&gt;</h1>
-        <p class="header__subtitle">закрывающий тег</p>
-      </article>
+      <a class="logo" href="#">&lt;/html&gt;</a>
+      <h1 class="header__title">закрывающий тег</h1>
       <nav class="theme-menu header__theme-menu">
       <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
@@ -55,11 +53,16 @@
         </h2>
         <div class="main__content-picture-container">
           <span class="watermark">&lt;/HTML&gt;</span>
-          <img 
-            class="main__picture" 
-            src="./images/desk-image.jpg"
-            alt="" 
-          />
+          <picture>
+            <source srcset="./images/desk-image.avif" type="image/avif">
+            <source srcset="./images/desk-image.webp" type="image/webp">
+            <img 
+              class="main__picture" 
+              src="./images/desk-image.jpg" 
+              loading="lazy" 
+              alt="Изображение 8-битного фургончика" 
+            />
+          </picture>
         </div>
         <div class="main__content_card-desc">
           <p class="main__content_card-paragraph">
@@ -70,8 +73,8 @@
           <p class="main__content_card-paragraph">
             Место для ваших воспоминаний о начале обучения.
           </p>
-          <section class="card__button-section">
-            <button class="card__icon-button">
+          <div class="card__button-section">
+            <button class="card__icon-button" type="button">
               <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour-color)"/>
@@ -81,12 +84,12 @@
                 <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="var(--heart-fill-color)"/>
               </svg>
             </button>
-            <button class="card__like-button button">
+            <button class="card__like-button button" type="button">
               <span class="button__text">
                 Like
               </span>
             </button>
-          </section>
+          </div>
         </div>
       </article>
       <article class="main__content_card">
@@ -95,10 +98,16 @@
         </h2>
         <div class="main__content-picture-container">
           <span class="watermark">&lt;/HTML&gt;</span>
-          <img 
-            class="main__picture grayscale" 
-            src="./images/desk-image.jpg" 
-            alt="" />
+          <picture>
+            <source srcset="./images/desk-image.avif" type="image/avif">
+            <source srcset="./images/desk-image.webp" type="image/webp">
+            <img 
+              class="main__picture grayscale" 
+              src="./images/desk-image.jpg" 
+              loading="lazy" 
+              alt="Изображение 8-битного фургончика под фильтром 'черно-белый 70%'" 
+            />
+          </picture>
         </div>
         <div class="main__content_card-desc">
           <p class="main__content_card-paragraph">
@@ -110,8 +119,8 @@
           <p class="main__content_card-paragraph">
             Место для ваших воспоминаний о начале первого спринта.
           </p>
-          <section class="card__button-section">
-            <button class="card__icon-button">
+          <div class="card__button-section">
+            <button class="card__icon-button" type="button">
               <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour-color)"/>
@@ -121,12 +130,12 @@
                 <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="var(--heart-fill-color)"/>
               </svg>
             </button>
-            <button class="card__like-button button">
+            <button class="card__like-button button" type="button">
               <span class="button__text">
                 Like
               </span>
             </button>
-          </section>
+          </div>
         </div>
       </article>
       <article class="main__content_card">
@@ -135,10 +144,16 @@
         </h2>
         <div class="main__content-picture-container">
           <span class="watermark">&lt;CSS&gt;</span>
-          <img 
-            class="main__picture saturate" 
-            src="./images/desk-image.jpg" 
-            alt="" />
+          <picture>
+            <source srcset="./images/desk-image.avif" type="image/avif">
+            <source srcset="./images/desk-image.webp" type="image/webp">
+            <img 
+              class="main__picture saturate" 
+              src="./images/desk-image.jpg" 
+              loading="lazy" 
+              alt="Изображение 8-битного фургончика под фильтром 'насыщенность 400%'" 
+            />
+          </picture>
         </div>
         <div class="main__content_card-desc">
           <p class="main__content_card-paragraph">
@@ -149,8 +164,8 @@
           <p class="main__content_card-paragraph">
             Место для ваших воспоминаний об окончании первого спринта.
           </p>
-          <section class="card__button-section">
-            <button class="card__icon-button">
+          <div class="card__button-section">
+            <button class="card__icon-button" type="button">
               <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour-color)"/>
@@ -160,12 +175,12 @@
                 <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="var(--heart-fill-color)"/>
               </svg>
             </button>
-            <button class="card__like-button button">
+            <button class="card__like-button button" type="button">
               <span class="button__text">
                 Like
               </span>
             </button>
-          </section>
+          </div>
         </div>
       </article>
       <article class="main__content_card">
@@ -174,10 +189,16 @@
         </h2>
         <div class="main__content-picture-container">
           <span class="watermark">&lt;desigions&gt;</span>
-          <img 
-            class="main__picture hue-rotate" 
-            src="./images/desk-image.jpg" 
-            alt="" />
+          <picture>
+            <source srcset="./images/desk-image.avif" type="image/avif">
+            <source srcset="./images/desk-image.webp" type="image/webp">
+            <img 
+              class="main__picture hue-rotate" 
+              src="./images/desk-image.jpg" 
+              loading="lazy" 
+              alt="Изображение 8-битного фургончика под фильтром 'поворот цветового круга 25 градусов'" 
+            />
+          </picture>
         </div>
         <div class="main__content_card-desc">
           <p class="main__content_card-paragraph">
@@ -189,8 +210,8 @@
           <p class="main__content_card-paragraph">
             Место для ваших воспоминаний о начале второго спринта.
           </p>
-          <section class="card__button-section">
-            <button class="card__icon-button">
+          <div class="card__button-section">
+            <button class="card__icon-button" type="button">
               <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour-color)"/>
@@ -200,12 +221,12 @@
                 <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="var(--heart-fill-color)"/>
               </svg>
             </button>
-            <button class="card__like-button button">
+            <button class="card__like-button button" type="button">
               <span class="button__text">
                 Like
               </span>
             </button>
-          </section>
+          </div>
         </div>
       </article>
       <article class="main__content_card">
@@ -214,10 +235,16 @@
         </h2>
         <div class="main__content-picture-container">
           <span class="watermark">care</span>
-          <img 
-            class="main__picture invert" 
-            src="./images/desk-image.jpg" 
-            alt="" />
+          <picture>
+            <source srcset="./images/desk-image.avif" type="image/avif">
+            <source srcset="./images/desk-image.webp" type="image/webp">
+            <img 
+              class="main__picture invert" 
+              src="./images/desk-image.jpg" 
+              loading="lazy" 
+              alt="Изображение 8-битного фургончика под фильтром 'инверсия'" 
+            />
+          </picture>
         </div>
         <div class="main__content_card-desc">
           <p class="main__content_card-paragraph">
@@ -230,8 +257,8 @@
           <p class="main__content_card-paragraph">
             Место для ваших воспоминаний об окончании второго спринта.
           </p>
-          <section class="card__button-section">
-            <button class="card__icon-button">
+          <div class="card__button-section">
+            <button class="card__icon-button" type="button">
               <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour-color)"/>
@@ -241,12 +268,12 @@
                 <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="var(--heart-fill-color)"/>
               </svg>
             </button>
-            <button class="card__like-button button">
+            <button class="card__like-button button" type="button">
               <span class="button__text">
                 Like
               </span>
             </button>
-          </section>
+          </div>
         </div>
       </article>
       <article class="main__content_card">
@@ -255,10 +282,16 @@
         </h2>
         <div class="main__content-picture-container">
           <span class="watermark">&lt;support&gt;</span>
-          <img 
-            class="main__picture sepia" 
-            src="./images/desk-image.jpg" 
-            alt="" />
+          <picture>
+            <source srcset="./images/desk-image.avif" type="image/avif">
+            <source srcset="./images/desk-image.webp" type="image/webp">
+            <img 
+              class="main__picture sepia" 
+              src="./images/desk-image.jpg" 
+              loading="lazy" 
+              alt="Изображение 8-битного фургончика под фильтром 'сепия 90%'" 
+            />
+          </picture>
         </div>
         <div class="main__content_card-desc">
           <p class="main__content_card-paragraph">
@@ -269,8 +302,8 @@
           <p class="main__content_card-paragraph">
             Место для ваших воспоминаний о начале третьего спринта.
           </p>
-          <section class="card__button-section">
-            <button class="card__icon-button">
+          <div class="card__button-section">
+            <button class="card__icon-button" type="button">
               <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour-color)"/>
@@ -280,12 +313,12 @@
                 <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="var(--heart-fill-color)"/>
               </svg>
             </button>
-            <button class="card__like-button button">
+            <button class="card__like-button button" type="button">
               <span class="button__text">
                 Like
               </span>
             </button>
-          </section>
+          </div>
         </div>
       </article>
       <article class="main__content_card">
@@ -294,10 +327,16 @@
         </h2>
         <div class="main__content-picture-container">
           <span class="watermark">&lt;lifes-style: none;&gt;</span>
-          <img 
-            class="main__picture blur" 
-            src="./images/desk-image.jpg" 
-            alt="" />
+          <picture>
+            <source srcset="./images/desk-image.avif" type="image/avif">
+            <source srcset="./images/desk-image.webp" type="image/webp">
+            <img 
+              class="main__picture blur" 
+              src="./images/desk-image.jpg" 
+              loading="lazy" 
+              alt="Изображение 8-битного фургончика под фильтром 'размытие 10 пикселей'" 
+            />
+          </picture>
         </div>
         <div class="main__content_card-desc">
           <p class="main__content_card-paragraph">
@@ -309,8 +348,8 @@
           <p class="main__content_card-paragraph">
             Место для ваших воспоминаний об окончании третьего спринта.
           </p>
-          <section class="card__button-section">
-            <button class="card__icon-button">
+          <div class="card__button-section">
+            <button class="card__icon-button" type="button">
               <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour-color)"/>
@@ -320,12 +359,12 @@
                 <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="var(--heart-fill-color)"/>
               </svg>
             </button>
-            <button class="card__like-button button">
+            <button class="card__like-button button" type="button">
               <span class="button__text">
                 Like
               </span>
             </button>
-          </section>
+          </div>
         </div>
       </article>
       <article class="main__content_card">
@@ -334,10 +373,16 @@
         </h2>
         <div class="main__content-picture-container">
           <span class="watermark">&lt;experience&gt;</span>
-          <img 
-            class="main__picture mixed" 
-            src="./images/desk-image.jpg" 
-            alt="" />
+          <picture>
+            <source srcset="./images/desk-image.avif" type="image/avif">
+            <source srcset="./images/desk-image.webp" type="image/webp">
+            <img 
+              class="main__picture mixed" 
+              src="./images/desk-image.jpg" 
+              loading="lazy" 
+              alt="Изображение 8-битного фургончика под множеством фильтров" 
+            />
+          </picture>
         </div>
         <div class="main__content_card-desc">
           <p class="main__content_card-paragraph">
@@ -350,8 +395,8 @@
           <p class="main__content_card-paragraph">
             Место, чтобы остановиться, подумать и написать, что вы чувствуете в этой точке пути.
           </p>
-          <section class="card__button-section">
-            <button class="card__icon-button">
+          <div class="card__button-section">
+            <button class="card__icon-button" type="button">
               <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g class="heart">
                   <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9ZM9 12H6V15H9V12ZM9 15H6V18H9V15ZM18 6H15V9H18V6ZM12 18H9V21H12V18ZM15 21H12V24H15V21ZM18 24H15V27H18V24ZM27 6H30V9H27V6ZM24 6H27V9H24V6ZM30 9H33V12H30V9ZM30 12H33V15H30V12ZM30 15H33V18H30V15ZM21 6H24V9H21V6ZM27 18H30V21H27V18ZM24 21H27V24H24V21ZM21 24H24V27H21V24ZM21 27H18V30H21V27ZM21 9H18V12H21V9Z" fill="var(--heart-contour-color)"/>
@@ -361,47 +406,47 @@
                 <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="var(--heart-fill-color)"/>
               </svg>
             </button>
-            <button class="card__like-button button">
+            <button class="card__like-button button" type="button">
               <span class="button__text">
                 Like
               </span>
             </button>
-          </section>
+          </div>
         </div>
       </article>
-    </main>
-    <footer class="footer">
-      <button 
-        class="footer__button button"
-        type="button"
-        onclick="window['modal'].showModal()" 
-        aria-controls="modal"
-      >
-        <svg class="floppy">
-          <use href="./svg/floppy.svg#floppy" />
-        </svg>
-        <span class="button__text">
-          Сохранить на память
-        </span>
-      </button>
-      <dialog id="modal">
-        <div class="modal__window">
+      <div class="main__content-save-button">
+        <button 
+          class="save__button button" 
+          type="button" 
+          onclick="window['modal__logic'].showModal()" 
+          aria-controls="modal__logic"
+        >
           <svg class="floppy">
             <use href="./svg/floppy.svg#floppy" />
           </svg>
-          <h3 class="modal__text">
-            Вставьте дискету,&nbsp;чтобы продолжить
-          </h3>
-          <button 
-            class="modal__button button" 
-            type="button"
-            onclick="window['modal'].close();"
-          >
-            <span class="button__text">OK</span>
-          </button>
-        </div>
-      </dialog>
-    </footer>
+          <span class="button__text">
+            Сохранить на память
+          </span>
+        </button>
+        <dialog id="modal__logic" class="modal__style">
+          <div class="modal__window">
+            <svg class="floppy">
+              <use href="./svg/floppy.svg#floppy" />
+            </svg>
+            <h3 class="modal__text">
+              Вставьте дискету,&nbsp;чтобы продолжить
+            </h3>
+            <button 
+              class="modal__button button" 
+              type="button" 
+              onclick="window['modal__logic'].close();"
+            >
+              <span class="button__text">OK</span>
+            </button>
+          </div>
+        </dialog>
+      </div>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
