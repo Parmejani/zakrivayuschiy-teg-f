@@ -24,4 +24,11 @@
   --width: clamp(375px, 17.3839rem + 29.0179vw, 700px);
   --heart-contour-color: var(--accent-color);
   --heart-fill-color: red;
+  --mobile-width: 100%;
+}
+
+@media (width <= 375px) {
+  :root {
+    --width: 100%;
+  }
 }
