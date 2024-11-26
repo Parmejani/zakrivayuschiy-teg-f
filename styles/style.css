@@ -80,6 +80,7 @@ button {
   text-transform: uppercase;
   background-color: transparent;
   cursor: pointer;
+  padding-inline: 0;
 }
 
 .theme-menu__button:disabled::before {
@@ -109,12 +110,12 @@ button {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0.5ch;
+  left: 0;
+  inline-size: 100%;
   border-block-end: 2px solid var(--accent-color);
   transition: transform 0.3s ease;
   transform: scaleX(0);
   transform-origin: left;
-  inline-size: 80%;
 }
 
 .theme-menu__button:focus-visible::after {
