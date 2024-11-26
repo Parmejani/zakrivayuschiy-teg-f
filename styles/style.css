@@ -69,7 +69,7 @@ button {
   mix-blend-mode: difference;
 }
 
-.button:focus {
+.button:focus-visible {
   box-shadow: 2px 2px var(--accent-color);
   transition: box-shadow .3s ease;
 }

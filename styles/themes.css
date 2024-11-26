@@ -47,8 +47,8 @@
   --accent-color: #00CC14;
 }
 
-.theme-dark .button__text:hover {
-  color: var(--bg-color);
+.theme-dark .button__text {
+  color: var(--accent-color);
 }
 
 
@@ -78,6 +78,6 @@
   }
 
   .theme-auto .button__text:hover {
-    color: var(--bg-color);
+    color: var(--accent-color);
   }
 }
