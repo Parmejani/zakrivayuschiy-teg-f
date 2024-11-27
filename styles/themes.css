@@ -51,6 +51,10 @@
   color: var(--accent-color);
 }
 
+.theme-dark .floppy {
+  color: var(--accent-color);
+}
+
 
 /* Медиазапросы */
 
@@ -77,7 +81,11 @@
     --accent-color: #00CC14;
   }
 
-  .theme-auto .button__text:hover {
+  .theme-auto .button__text {
+    color: var(--accent-color);
+  }
+
+  .theme-auto .floppy {
     color: var(--accent-color);
   }
 }
